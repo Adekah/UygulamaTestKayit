@@ -1,0 +1,71 @@
+﻿@model UygulamaTestProjesi.Models.tbl_Test
+@{
+    ViewBag.Title = "TestKayit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form action="/Default/TestKayit" method="post" enctype="multipart/form-data">
+            <div>
+                <h3 style="margin-left:100px">Test Kayıt Ekranı</h3>
+                <div style="margin-left:100px; margin-top:50px;">
+                    <h4>  Uygulama Adı</h4>
+                    @Html.TextBoxFor(model => model.UygulamaAdi, "", new { @class = "form-control", @id = "_Uygulamaadi" })
+                </div>
+
+
+                <div style=" margin-left: 100px; margin-top: 25px;">
+                    <h4> Test Kategorisi</h4>
+                    @{ List<UygulamaTestProjesi.Models.tbl_Kategori> _kategori = UygulamaTestProjesi.Data.Data.getKategori(); }
+                    <select name="kategori" id="_kategori" class="form-control">
+
+                        <option>Kategori Seçiniz</option>
+                        @foreach (var item in _kategori)
+                        {
+                            <option value="@item.Kategori_ID">@item.Kategori_Adi</option>
+                        }
+                    </select>
+                </div>
+                <div style="margin-left:100px;margin-top:25px;">
+                    <h4>Test Detayı</h4>
+                    @Html.TextAreaFor(model => model.Test_Detay, new { @class = "form-control", @id = "_TestDetay" })
+
+                </div>
+
+
+                <div style="margin-left:100px;margin-top:25px">
+                    <h4>Test Son Durumu</h4>
+                    @{ List<UygulamaTestProjesi.Models.tbl_Sonuc> _sonuc = UygulamaTestProjesi.Data.Data.getSonuc();}
+                    <select name="testsonuc" id="_testsonuc" class="form-control">
+                        <option>Test Son Durumunu Seçiniz.</option>
+                        @foreach (var item in _sonuc)
+                        {
+                            <option value="@item.Sonuc_ID">@item.Sonuc</option>
+                        }
+                    </select>
+                </div>
+
+                <div style="margin-left:100px;margin-top:25px;">
+                    <label id="_testDate" class="form-control" style="color:red">Test Tarihi:@DateTime.Today.ToString("dd/MM/yyyy") </label>
+                </div>
+            </div>
+            <div style="margin-left:100px;margin-top:25px">
+                <h4> Resim eklemek için aşağıdaki butona basınız.</h4>
+                @* SADECE RESİM SEÇİLEBİLMESİ İÇİN accept="image/*" VE ÇOKLU RESİM SEÇİLEBİLMESİ İÇİN multiple ekliyoruz  *@
+                <input type="file" accept="image/*" name="TestImage" style="margin-top:25px;" id="_TestImage" multiple />
+            </div>
+            <div style="margin-left:100px;margin-top:25px">
+                <div class="container-login100-form-btn" style="justify-content:flex-end;">
+                    <br />
+
+                    <button type="submit" class="btn btn-info btn-choose" style="width:180px" id="_createbutton">Kaydı Oluştur</button>
+                    <a href="/Default/Home">Listeye Geri Dön</a>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</div>

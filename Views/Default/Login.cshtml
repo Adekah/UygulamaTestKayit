@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/ionicons.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/side.css" rel="stylesheet" />
+    @* ----------------------------------------------------------------------- *@
+    <script src="~/scripts/side.js"></script>
+    <script src="~/scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/scripts/bootstrap.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body background="~/Theme_Images/bck.jpg" id="LoginBackground">
+
+    <div class="form-control" id="Logincontainer">
+        <h2>Giriş Sayfası</h2>
+        <img id="adminimage" src="~/Theme_Images/admin.png" />
+        @using (Html.BeginForm("Login", "Default", FormMethod.Post, new { @class = "login100-form validate-form" }))
+        {
+            <div class="form-group has-feedback">
+                <input class="form-control" name="username" id="btnusername" type="text" placeholder="KullanıcıAdı" value="Umur" />
+                <span class="glyphicon glyphicon-user form-control-feedback" id="user"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input class="form-control" id="btnpass" name="password" type="password" placeholder="Parola" value="123" />
+                <span class="glyphicon glyphicon-lock form-control-feedback glyphicon2 icon" id="lock"></span>
+            </div>
+            if (ViewBag.errormessage != null)
+            {
+                <span style="color:red;font-weight:bold">
+                    <i class="fa fa-exclamation-triangle"></i>@ViewBag.errormessage
+                </span>
+            }
+            <div>
+                <button type="submit" id="btnlogin" class="btn btn-primary">Oturum Aç</button>
+            </div>
+
+
+        }
+    </div>
+
+
+</body>
+</html>

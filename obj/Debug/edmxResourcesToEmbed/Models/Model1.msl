@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UygulamaTestDBModelStoreContainer" CdmEntityContainer="UygulamaTestDBEntities">
+    <EntitySetMapping Name="tbl_Image">
+      <EntityTypeMapping TypeName="UygulamaTestDBModel.tbl_Image">
+        <MappingFragment StoreEntitySet="tbl_Image">
+          <ScalarProperty Name="Test_ID" ColumnName="Test_ID" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Image_ID" ColumnName="Image_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Kategori">
+      <EntityTypeMapping TypeName="UygulamaTestDBModel.tbl_Kategori">
+        <MappingFragment StoreEntitySet="tbl_Kategori">
+          <ScalarProperty Name="Kategori_Adi" ColumnName="Kategori_Adi" />
+          <ScalarProperty Name="Kategori_ID" ColumnName="Kategori_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Kullanici">
+      <EntityTypeMapping TypeName="UygulamaTestDBModel.tbl_Kullanici">
+        <MappingFragment StoreEntitySet="tbl_Kullanici">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="Kullanici_ID" ColumnName="Kullanici_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Sonuc">
+      <EntityTypeMapping TypeName="UygulamaTestDBModel.tbl_Sonuc">
+        <MappingFragment StoreEntitySet="tbl_Sonuc">
+          <ScalarProperty Name="Sonuc" ColumnName="Sonuc" />
+          <ScalarProperty Name="Sonuc_ID" ColumnName="Sonuc_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Test">
+      <EntityTypeMapping TypeName="UygulamaTestDBModel.tbl_Test">
+        <MappingFragment StoreEntitySet="tbl_Test">
+          <ScalarProperty Name="Kullanici_ID" ColumnName="Kullanici_ID" />
+          <ScalarProperty Name="Sonuc_ID" ColumnName="Sonuc_ID" />
+          <ScalarProperty Name="Test_Detay" ColumnName="Test_Detay" />
+          <ScalarProperty Name="Test_Tarihi" ColumnName="Test_Tarihi" />
+          <ScalarProperty Name="Kategori_ID" ColumnName="Kategori_ID" />
+          <ScalarProperty Name="UygulamaAdi" ColumnName="UygulamaAdi" />
+          <ScalarProperty Name="Test_ID" ColumnName="Test_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

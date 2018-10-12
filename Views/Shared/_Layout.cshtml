@@ -1,0 +1,101 @@
+﻿
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test Ekranı</title>
+    <link href="~/Content/side.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/dist/css/AdminLTE.min.css" rel="stylesheet" />
+    <link href="~/dist/css/skins/skin-blue.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!-- Main Header -->
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="~/Default/Home" class="logo">
+
+                <span class="logo-lg"><b>Test</b><i>Ekranı</i></span>
+            </a>
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <!-- Menu Toggle Button -->
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu">
+                        
+                            <ul class="dropdown-menu">
+                                <!-- The user image in the menu -->
+                              
+                                <!-- Menu Body -->
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+
+                                    <form action="/Home/Logout" method="post" class="pull-right">
+                                        <a href="javascript:;" onclick="parentNode.submit();">
+                                            <span type="button" class="btn btn-danger">Çıkış</span>
+                                        </a>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel">
+                  
+                  
+                </div>
+                <!-- search form (Optional) -->
+                <!-- /.search form -->
+                <!-- Sidebar Menu -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header"><b style="font-size:large">Test Menüsü</b></li>
+                    <!-- Optionally, you can add icons to the links -->
+                    <li>@Html.ActionLink("Test Kayıt", "TestKayit")</li>
+                    <li> @Html.ActionLink("Test Listesi", "Home")</li>
+                    <li class="treeview">
+                  
+                     
+
+                    </li>
+
+                </ul>
+                <!-- /.sidebar-menu -->
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+
+                <div class="container-fluid" style="margin-top:15px">
+                    @RenderBody()
+                </div>
+            </section>
+      
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>

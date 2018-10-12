@@ -1,0 +1,56 @@
+﻿@model UygulamaTestProjesi.Models.tbl_Test
+@{
+    ViewBag.Title = "TestDetay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        @if (Model != null)
+        {
+
+            <div class="col-md-12">
+                <div class="form-control" style="width:600px; margin-top:15px;">
+                    <label>Uygulama Adı : @ViewBag.uygulamaadi</label>
+                </div>
+
+                <div class="form-control" style="width:600px; margin-top:15px;">
+
+
+                    <label>Test Kategorisi: @ViewBag.category</label>
+                </div>
+
+                <div class="form-control" style="width:600px; margin-top:15px;">
+                    <label>Test Tarihi : @ViewBag.testdate</label>
+
+                </div>
+                <div class="form-control" style="width:600px; height:150px;margin-top:15px;">
+                    <label>
+                        Test Detayları : @ViewBag.testdetay
+                    </label>
+                </div>
+                <div class="form-control" style="width:600px;margin-top:15px;">
+                    <label>
+                        Test Sonucu : @ViewBag.sonuc
+                    </label>
+                </div>
+                <div class="form-control" style="width:600px;margin-top:15px;">
+                    <label>
+                        Testi Yapan Kişi : @ViewBag.kullanici
+                    </label>
+                </div>
+            </div>
+            <input type="button" class="btn btn-primary" style="margin-top:30px;    margin-bottom: 30px;margin-left:15px;" value="Listeye Geri Dön" onclick="location.href='@Url.Action("Home","Default")'" />
+        }
+        <div>
+            <h3 style="margin-left:15px">Teste Ait Resimler</h3>
+            @foreach (UygulamaTestProjesi.Models.tbl_Image imgs in @ViewBag.testimage)
+            {
+                <div class="col-md-6">
+
+                    <img id="Detailimage" src="~/Images/@imgs.Image" />
+                </div>
+            }
+        </div>
+    </div>
+</div>

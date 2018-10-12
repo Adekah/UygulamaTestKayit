@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="UygulamaTestDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_Image">
+          <Key>
+            <PropertyRef Name="Image_ID" />
+          </Key>
+          <Property Name="Image_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_Kategori">
+          <Key>
+            <PropertyRef Name="Kategori_ID" />
+          </Key>
+          <Property Name="Kategori_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kategori_Adi" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tbl_Kullanici">
+          <Key>
+            <PropertyRef Name="Kullanici_ID" />
+          </Key>
+          <Property Name="Kullanici_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="nchar" MaxLength="30" />
+          <Property Name="Tel" Type="nchar" MaxLength="20" />
+          <Property Name="Username" Type="nchar" MaxLength="20" />
+          <Property Name="Password" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tbl_Sonuc">
+          <Key>
+            <PropertyRef Name="Sonuc_ID" />
+          </Key>
+          <Property Name="Sonuc_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sonuc" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tbl_Test">
+          <Key>
+            <PropertyRef Name="Test_ID" />
+          </Key>
+          <Property Name="Test_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UygulamaAdi" Type="nchar" MaxLength="30" />
+          <Property Name="Kategori_ID" Type="int" />
+          <Property Name="Test_Tarihi" Type="date" />
+          <Property Name="Test_Detay" Type="nchar" MaxLength="50" />
+          <Property Name="Sonuc_ID" Type="int" />
+          <Property Name="Kullanici_ID" Type="int" />
+        </EntityType>
+        <EntityContainer Name="UygulamaTestDBModelStoreContainer">
+          <EntitySet Name="tbl_Image" EntityType="Self.tbl_Image" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Kategori" EntityType="Self.tbl_Kategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Kullanici" EntityType="Self.tbl_Kullanici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Sonuc" EntityType="Self.tbl_Sonuc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Test" EntityType="Self.tbl_Test" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UygulamaTestDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="UygulamaTestDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_Image" EntityType="UygulamaTestDBModel.tbl_Image" />
+          <EntitySet Name="tbl_Kategori" EntityType="UygulamaTestDBModel.tbl_Kategori" />
+          <EntitySet Name="tbl_Kullanici" EntityType="UygulamaTestDBModel.tbl_Kullanici" />
+          <EntitySet Name="tbl_Sonuc" EntityType="UygulamaTestDBModel.tbl_Sonuc" />
+          <EntitySet Name="tbl_Test" EntityType="UygulamaTestDBModel.tbl_Test" />
+        </EntityContainer>
+        <EntityType Name="tbl_Image">
+          <Key>
+            <PropertyRef Name="Image_ID" />
+          </Key>
+          <Property Name="Image_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_Kategori">
+          <Key>
+            <PropertyRef Name="Kategori_ID" />
+          </Key>
+          <Property Name="Kategori_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kategori_Adi" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Kullanici">
+          <Key>
+            <PropertyRef Name="Kullanici_ID" />
+          </Key>
+          <Property Name="Kullanici_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Sonuc">
+          <Key>
+            <PropertyRef Name="Sonuc_ID" />
+          </Key>
+          <Property Name="Sonuc_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sonuc" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Test">
+          <Key>
+            <PropertyRef Name="Test_ID" />
+          </Key>
+          <Property Name="Test_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UygulamaAdi" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Kategori_ID" Type="Int32" />
+          <Property Name="Test_Tarihi" Type="DateTime" Precision="0" />
+          <Property Name="Test_Detay" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Sonuc_ID" Type="Int32" />
+          <Property Name="Kullanici_ID" Type="Int32" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UygulamaTestDBModelStoreContainer" CdmEntityContainer="UygulamaTestDBEntities">
+          <EntitySetMapping Name="tbl_Image">
+            <EntityTypeMapping TypeName="UygulamaTestDBModel.tbl_Image">
+              <MappingFragment StoreEntitySet="tbl_Image">
+                <ScalarProperty Name="Test_ID" ColumnName="Test_ID" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Image_ID" ColumnName="Image_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Kategori">
+            <EntityTypeMapping TypeName="UygulamaTestDBModel.tbl_Kategori">
+              <MappingFragment StoreEntitySet="tbl_Kategori">
+                <ScalarProperty Name="Kategori_Adi" ColumnName="Kategori_Adi" />
+                <ScalarProperty Name="Kategori_ID" ColumnName="Kategori_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Kullanici">
+            <EntityTypeMapping TypeName="UygulamaTestDBModel.tbl_Kullanici">
+              <MappingFragment StoreEntitySet="tbl_Kullanici">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Kullanici_ID" ColumnName="Kullanici_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Sonuc">
+            <EntityTypeMapping TypeName="UygulamaTestDBModel.tbl_Sonuc">
+              <MappingFragment StoreEntitySet="tbl_Sonuc">
+                <ScalarProperty Name="Sonuc" ColumnName="Sonuc" />
+                <ScalarProperty Name="Sonuc_ID" ColumnName="Sonuc_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Test">
+            <EntityTypeMapping TypeName="UygulamaTestDBModel.tbl_Test">
+              <MappingFragment StoreEntitySet="tbl_Test">
+                <ScalarProperty Name="Kullanici_ID" ColumnName="Kullanici_ID" />
+                <ScalarProperty Name="Sonuc_ID" ColumnName="Sonuc_ID" />
+                <ScalarProperty Name="Test_Detay" ColumnName="Test_Detay" />
+                <ScalarProperty Name="Test_Tarihi" ColumnName="Test_Tarihi" />
+                <ScalarProperty Name="Kategori_ID" ColumnName="Kategori_ID" />
+                <ScalarProperty Name="UygulamaAdi" ColumnName="UygulamaAdi" />
+                <ScalarProperty Name="Test_ID" ColumnName="Test_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,94 @@
+﻿#LoginBackground{
+    background-attachment:fixed;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+#Logincontainer {
+    width: 500px;
+    height: 600px;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    margin-top: 150px;
+}
+#adminimage {
+    max-height: 250px
+}
+#btnpass {
+    width: 350px;
+    height: 50px;
+    margin-top: 25px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#btnusername {
+    width: 350px;
+    height: 50px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#btnlogin {
+    width: 200px;
+    height: 40px;
+    margin-top: 25px;  
+    left: auto;
+    top: auto;
+}
+#user {
+    margin-right: 70px;
+    margin-top: 6px
+}
+
+#lock {
+    margin-top: 10px;
+    margin-right: 70px;
+}
+#_Uygulamaadi {
+    width: 450px;
+    height: 50px;
+    border-radius: 8px;
+}
+    #_kategori{
+         width: 450px;
+    height: 50px;
+    border-radius: 8px;
+              }
+    #_testsonuc{
+           width: 450px;
+    height: 50px;
+    border-radius: 8px;
+    }
+#_TestDetay{
+      width: 450px;
+    height: 240px;
+    border-radius: 8px;
+    
+}
+#_testDate{
+    width: 450px;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 20px;
+}
+#trbody{
+    height:50px;
+    text-align:center;
+}
+#trhead{
+    color: red;
+    height: 50px;
+    background-color: yellow;
+   
+}
+#Detailimage{
+    width:425px;
+    border: solid 5px #3c8dbc;
+    height:325px;
+    margin-top: 10px;
+    border-radius:5px;
+}

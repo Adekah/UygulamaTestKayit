@@ -1,0 +1,51 @@
+﻿@model IEnumerable<UygulamaTestProjesi.Models.tbl_Test>
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+<div class="panel panel-default" style="margin-top:50px">
+    <div class="panel-body">
+        <h2>Test Kayıt Listeleme Ekranı</h2><br /><br />
+        <table  style="width:1300px; max-height:2500px" border="1">
+            <thead>
+                <tr id="trhead">
+                    <th>  Test No </th>
+                    <th>  Uygulama Adı </th>
+                    <th> Test Kategorisi </th>
+                    <th> Test Tarihi </th>
+                    <th> Test Test Detayı </th>
+                    <th> Test Sonucu </th>
+                    <th> Testi Yapan </th>
+                    <th></th>
+                    <th></th>
+          
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr id="trbody">
+                            <td>@Html.DisplayFor(model => item.Test_ID, new { @id = "testno" })</td>
+                            <td>@Html.DisplayFor(model => item.UygulamaAdi)</td>
+                            <td>@UygulamaTestProjesi.Data.Data.getcategoryname(item.Kategori_ID)</td>
+                            <td>@item.Test_Tarihi.Value.ToString("dd/mm/yyyy")</td>
+                            <td>@Html.DisplayFor(model => item.Test_Detay)</td>
+                            <td>@UygulamaTestProjesi.Data.Data.gettestsonuc(item.Sonuc_ID)</td>
+                            <td>@UygulamaTestProjesi.Data.Data.getkullanici(item.Kullanici_ID)</td>
+                            <td style="color:red">Kaydı Sil</td>
+                            <td style="color:cornflowerblue"><a href="~/Default/TestDetay/@item.Test_ID">Test Detayı</a><td>
+                        </tr>
+                    }
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
